@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { AppBar, IconButton, Toolbar } from "@material-ui/core";
+import { AppBar, IconButton, Toolbar, Collapse } from "@material-ui/core";
 import SortIcon from "@material-ui/icons/Sort";
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -26,7 +27,7 @@ const useStyles = makeStyles(() => ({
     flexGrow: 1,
   },
   colorText: {
-    color: "#5AFF",
+    color: "#5AFF3D",
   },
   container:{
     textAlign: "center",
@@ -36,10 +37,18 @@ const useStyles = makeStyles(() => ({
       fontSize: "3rem",
 
   },
+  goDown:{
+    color: "#5AFF3D",
+    fontSize: "4rem",
+  }
 }));
 
 const Header = () => {
   const classes = useStyles();
+  const [checked, setChecked] =  useState(false);
+  useEffect(()=>{
+    setChecked(true);
+  },[]);
 
   return (
     <div className={classes.root}>
@@ -53,12 +62,22 @@ const Header = () => {
           </IconButton>
         </Toolbar>
       </AppBar>
+
+      <Collapse
+       in={checked}
+       collapsedHeight={50}
+       >
       <div className={classes.container}>
         <h1 className={classes.title}>
           Welcome to <br /> My <span className={classes.colorText}>Island.</span>
         </h1>
+        <IconButton>
+          <ExpandMoreIcon className={classes.goDown}/>
+        </IconButton>
       </div>
+      </Collapse>
     </div>
+
   );
 };
 
