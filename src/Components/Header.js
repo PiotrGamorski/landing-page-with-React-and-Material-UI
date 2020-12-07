@@ -66,6 +66,7 @@ const Header = () => {
       <Collapse
        in={checked}
        collapsedHeight={50}
+       {...(checked ?  {timeout: 1000} : {})}
        >
       <div className={classes.container}>
         <h1 className={classes.title}>
