@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
+import { Collapse } from "@material-ui/core";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
@@ -30,35 +31,41 @@ const useStyles = makeStyles({
   },
 });
 
-const ImageCard = ({ place }) => {
+const ImageCard = ({ place, checked }) => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
-      <CardMedia
-        className={classes.media}
-        image={place.imageUrl}
-        title="Contemplative Reptile"
-      />
-      <CardContent>
-        <Typography
-          gutterBottom
-          variant="h5"
-          component="h1"
-          className={classes.title}
-        >
-          {place.title}
-        </Typography>
-        <Typography
-          variant="body2"
-          color="textSecondary"
-          component="p"
-          className={classes.desc}
-        >
-          {place.description}
-        </Typography>
-      </CardContent>
-    </Card>
+    <Collapse
+    in={checked}
+    collapsedHeight={10}
+    {...(checked ?  {timeout: 2500} : {})}
+    >
+      <Card className={classes.root}>
+        <CardMedia
+          className={classes.media}
+          image={place.imageUrl}
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="h1"
+            className={classes.title}
+          >
+            {place.title}
+          </Typography>
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            component="p"
+            className={classes.desc}
+          >
+            {place.description}
+          </Typography>
+        </CardContent>
+      </Card>
+    </Collapse>
   );
 };
 

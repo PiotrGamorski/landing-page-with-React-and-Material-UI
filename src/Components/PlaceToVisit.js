@@ -1,25 +1,28 @@
 import React from "react";
-import {makeStyles} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import ImageCard from "./ImageCard";
-import places from "../Static/places"
+import places from "../Static/places";
+import useWindowPosition from "../Hook/useWindowPosition";
 
-const useStyles = makeStyles(()=>({
-    root: {
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignContent: "center",
-    }
+const useStyles = makeStyles(() => ({
+  root: {
+    height: "100vh",
+    display: "flex",
+    justifyContent: "center",
+    alignContent: "center",
+  },
 }));
 
 const PlaceToVisit = () => {
-    const classes = useStyles();
+  const classes = useStyles();
+  const checked = useWindowPosition("header");
 
-    return (<div className={classes.root}>
-        <ImageCard place={places[0]}/>
-        <ImageCard place={places[1]}/>
-
-    </div>);
-}
+  return (
+    <div className={classes.root}>
+      <ImageCard place={places[1]} checked={checked} />
+      <ImageCard place={places[0]} checked={checked} />
+    </div>
+  );
+};
 
 export default PlaceToVisit;
