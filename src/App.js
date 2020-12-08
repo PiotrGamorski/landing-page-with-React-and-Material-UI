@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { CssBaseline } from "@material-ui/core";
 import Header from "./Components/Header";
+import PlaceToVisit from "./Components/PlaceToVisit";
 
 const useStyles = makeStyles(() => ({
   background: {
@@ -19,6 +20,7 @@ const App = () => {
     <div className={background}>
       <CssBaseline />
       <Header/>
+      <PlaceToVisit/>
     </div>
   );
 };
