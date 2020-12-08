@@ -4,7 +4,7 @@ import ImageCard from "./ImageCard";
 import places from "../Static/places";
 import useWindowPosition from "../Hook/useWindowPosition";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
     display: "flex",
@@ -18,7 +18,7 @@ const PlaceToVisit = () => {
   const checked = useWindowPosition("header");
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="place-to-visit">
       <ImageCard place={places[1]} checked={checked} />
       <ImageCard place={places[0]} checked={checked} />
     </div>

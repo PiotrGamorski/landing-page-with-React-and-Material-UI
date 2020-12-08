@@ -12,7 +12,7 @@ const useWindowPosition = (id) => {
     }
 
     window.addEventListener("scroll", updatePosition);
-    //updatePosition();
+    updatePosition();
     return () => window.removeEventListener("scroll", updatePosition);
   }, [id]);
   return animation;
