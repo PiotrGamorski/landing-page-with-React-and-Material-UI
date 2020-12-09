@@ -15,6 +15,7 @@ const useStyles = makeStyles(() => ({
   },
   appbar: {
     background: "none",
+    height: "15%",
   },
   icon: {
     color: "#fff",
@@ -26,6 +27,8 @@ const useStyles = makeStyles(() => ({
   },
   appbarTitle: {
     flexGrow: 1,
+    position: "relative",
+    top: "-7.5%",
   },
   colorText: {
     color: "#5AFF3D",

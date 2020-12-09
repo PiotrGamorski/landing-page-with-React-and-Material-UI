@@ -8,7 +8,7 @@ const useStyles = makeStyles(() => ({
   background: {
     minHeight: "100vh",
     backgroundImage: `url(${process.env.PUBLIC_URL + "/Assets/bg.jpg"})`,
-    backgroundRepeat: "no-repeat",
+    backgroundRepeat: "repeat-y",
     backgroundSize: "cover",
   },
 }));
