@@ -16,6 +16,8 @@ const useStyles = makeStyles(() => ({
   appbar: {
     background: "none",
     height: "15%",
+    display: "flex",
+    flexFlow: "row wrap",
   },
   icon: {
     color: "#fff",
@@ -35,6 +37,7 @@ const useStyles = makeStyles(() => ({
   },
   container:{
     textAlign: "center",
+    justifyContent: "center",
   },
   title : {
       color: "#fff",
